@@ -1,0 +1,96 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+html {
+    text-transform: uppercase;
+}
+
+.header {
+    background-color: aqua;
+    grid-area: header;
+}
+
+.menu {
+    background-color: blue;
+    grid-area: menu;
+}
+
+.hero {
+    background-color: blueviolet;
+    grid-area: hero;
+}
+
+.main {
+    background-color: chartreuse;
+    grid-area: main;
+}
+
+.banner {
+    background-color: coral;
+    grid-area: banner;
+}
+
+.extra {
+    background-color: darkgreen;
+    grid-area: extra;
+}
+
+.image {
+    background-color: deeppink;
+    grid-area: image;
+}
+
+.container {
+    display: grid;
+    justify-content: center;
+}
+
+.container > * {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+
+@media (max-width: 500px) {
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 90px 90px 200px 200px 137px 137px 137px;
+        grid-template-areas: 
+        "header"
+        "menu"
+        "hero"
+        "main"
+        "banner"
+        "extra"
+        "image";
+    }
+}
+
+@media (min-width: 500px) {
+    .container {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 100px 300px 250px 200px 150px;
+        grid-template-areas: 
+        "header header header header"
+        "hero hero hero hero"
+        "menu main main main"
+        "menu banner banner banner"
+        "menu extra extra image";
+    }
+}
+
+@media (min-width: 1000px) {
+    .container {
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 100px 350px 150px 150px 250px;
+        grid-template-areas: 
+        "header menu menu menu menu"
+        "hero hero hero hero hero"
+        "main main main image image"
+        "main main main extra extra"
+        "banner banner banner banner banner";
+    }
+}
